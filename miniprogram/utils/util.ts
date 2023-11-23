@@ -17,3 +17,19 @@ const formatNumber = (n: number) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
 }
+
+export function loginToServer(code: string) {
+  wx.request({
+    url: 'server address',
+    method: 'POST',
+    data: {
+      code: code
+    },
+    success(res) {
+      console.log(res);
+    },
+    fail(err) {
+      console.error(err);
+    }
+  });
+}
