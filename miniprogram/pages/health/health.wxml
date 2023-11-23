@@ -1,0 +1,36 @@
+<!--pages/health/health.wxml-->
+<view class="container">
+  <view class="search-bar">
+    <input type="text" placeholder="请输入搜索内容" />
+  </view>
+  <view class="image-container">
+    <image src="path_to_your_image.jpg" mode="aspectFill" />
+  </view>
+  <view class="button-container">
+    <view class="button full-width" bindtap="onFirstButtonClick">
+      <image src="path_to_first_image.png" mode="aspectFit" />
+      <text>第一个按钮</text>
+    </view>
+    <view class="button full-width" bindtap="onSecondButtonClick">
+      <image src="path_to_second_image.png" mode="aspectFit" />
+      <text>第二个按钮</text>
+    </view>
+    <view class="button plus-button" bindtap="onThirdButtonClick">
+      <text>+</text>
+    </view>
+  </view>
+  <view class="tab-bar">
+    <view class="tab-item active">
+      <image src="path_to_home_icon_active.png" mode="aspectFit" />
+      <text>健康</text>
+    </view>
+    <view class="tab-item">
+      <image src="path_to_discover_icon.png" mode="aspectFit" />
+      <text>问诊</text>
+    </view>
+    <view class="tab-item">
+      <image src="path_to_more_icon.png" mode="aspectFit" />
+      <text>我的</text>
+    </view>
+  </view>
+  </view>
