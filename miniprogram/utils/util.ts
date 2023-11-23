@@ -20,7 +20,7 @@ const formatNumber = (n: number) => {
 
 export function loginToServer(code: string) {
   wx.request({
-    url: 'server address',
+    url: 'http://43.138.26.196:8000/user/login',
     method: 'POST',
     data: {
       code: code
