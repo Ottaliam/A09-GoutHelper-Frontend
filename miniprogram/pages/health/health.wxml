@@ -1,17 +1,43 @@
 <!--pages/health/health.wxml-->
-<view class="container">
-  <view class="tab-bar">
-    <view class="tab-item active">
-      <image src="{{static_base}}/icon-health.png" mode="aspectFit" />
-      <text>健康</text>
-    </view>
-    <view class="tab-item">
-      <image src="{{static_base}}/icon-diagnose.png" mode="aspectFit" />
-      <text>问诊</text>
-    </view>
-    <view class="tab-item">
-      <image src="{{static_base}}/icon-me.png" mode="aspectFit" />
-      <text>我的</text>
-    </view>
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>痛风助手</text>
+</view>
+
+<!-- 顶部搜索栏 -->
+<view class="search-bar">
+  <input type="text" placeholder="搜索" />
+</view>
+
+<!-- 图片容器 -->
+<view class="image-container">
+  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+</view>
+
+<!-- 两行组件 -->
+<view class="component-row" bindtap="onComponentTap">
+  <image src="{{static_base}}/icon-food.png" class="icon" mode="aspectFit" />
+  <text class="component-text">饮食记录</text>
+  <image src="{{static_base}}/icon-plus.png" class="icon" mode="aspectFit" />
+</view>
+<view class="component-row" bindtap="onComponentTap">
+  <image src="{{static_base}}/icon-logs.png" class="icon" mode="aspectFit" />
+  <text class="component-text">健康日志</text>
+</view>
+
+<!-- 底部 Tab Bar -->
+<view class="tab-bar">
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-health.png" mode="aspectFit" />
+    <text>健康</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-diagnose.png" mode="aspectFit" />
+    <text>问诊</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-me.png" mode="aspectFit" />
+    <text>我的</text>
   </view>
 </view>

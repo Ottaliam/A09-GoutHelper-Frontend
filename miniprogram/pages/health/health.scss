@@ -1,9 +1,71 @@
 /* pages/health/health.wxss */
-.container {
+
+// 标题栏样式
+.header-bar {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-top: env(safe-area-inset-top);
+  background-color: #FAFBFC;
+  border-bottom: 1px solid #D8D8D8;
+  text-align: center;
+
+  text {
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
+// 搜索栏样式
+.search-bar {
+  padding: 15px;
+  background-color: #FAFBFC;
+  border-bottom: 1px solid #D8D8D8;
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+  }
+}
+
+// 图片容器样式
+.image-container {
+  margin: 10px;
+  text-align: center;
+
+  image {
+    width: 100%;
+    max-height: 200px;
+  }
+}
+
+// 组件行样式
+.component-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .component-text {
+    flex-grow: 1;
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    text-align: left;
+  }
+}
+
+// 底部 Tab Bar 样式
 .tab-bar {
   display: flex;
   justify-content: space-around;
