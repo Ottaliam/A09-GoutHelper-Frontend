@@ -2,7 +2,9 @@
   "pages": [
     "pages/health/health",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/health/food-log/food-log",
+    "pages/health/food-add/food-add"
   ],
   "window": {
     "navigationBarTextStyle": "black",

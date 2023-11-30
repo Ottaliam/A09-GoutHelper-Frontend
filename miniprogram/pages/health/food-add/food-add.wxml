@@ -1,0 +1,15 @@
+<!--pages/health/food-add/food-add.wxml-->
+<view class="tab-bar">
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-health.png" mode="aspectFit" />
+    <text>健康</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-diagnose.png" mode="aspectFit" />
+    <text>问诊</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-me.png" mode="aspectFit" />
+    <text>我的</text>
+  </view>
+</view>
