@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    static_base: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.setData({
+      static_base: getApp().globalData.static_base
+    })
   },
 
   /**

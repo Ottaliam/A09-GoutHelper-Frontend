@@ -2,7 +2,10 @@
 import { loginToServer } from './utils/util'
 
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+    server_address: "http://43.138.26.196:8000",
+    static_base: "http://43.138.26.196:8000/static"
+  },
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
