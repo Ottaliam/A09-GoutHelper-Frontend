@@ -1,15 +1,70 @@
 <!--pages/health/food-add/food-add.wxml-->
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>饮食记录添加</text>
+</view>
+
+<!-- 顶部搜索栏 -->
+<view class="search-bar">
+  <input type="text" placeholder="搜索" />
+</view>
+
+<!-- 食物信息输入 -->
+<view class="food-info">
+  <image src="{{static_base}}/icon-health.png" class="component-image"></image>
+  <view class="text-and-input-container">
+    <text class="bold-rounded-text">这是一行加粗文字</text>
+    <view class="input-and-text">
+      <input type="text" placeholder="数量" class="short-input"/>
+      <text class="right-aligned-text">短文本</text>
+    </view>
+  </view>
+</view>
+
+<!-- 嘌呤信息展示 -->
+<view class="purine-info">
+  <text class="section-title">嘌呤含量</text>
+  <view class="calculation-container">
+    <text class="bold-text">1</text>
+    <text>×</text>
+    <text class="normal-text">bbb</text>
+    <text>=</text>
+    <text class="bold-text">c</text>
+    <text>mg</text>
+  </view>
+</view>
+
+<!-- 日期输入 -->
+<view class="date-component">
+  <text class="date-title">日期</text>
+  <input type="date" class="date-input"/>
+</view>
+
+<!-- 健康提醒 -->
+<view class="health-tips">
+  <text class="info-title">健康提示标题</text>
+  <text class="info-text">请注意正确认识的心态对健康检查的重要性。你今天对健康的微笑，加油！</text>
+</view>
+
+<!-- 按钮 -->
+<view class="button-container">
+  <button class="half-button">继续添加</button>
+  <button class="half-button">确定</button>
+</view>
+
+<!-- 底部 Tab Bar -->
 <view class="tab-bar">
   <view class="tab-item active">
     <image src="{{static_base}}/icon-health.png" mode="aspectFit" />
-    <text>健康</text>
+    <text>今日记录</text>
   </view>
   <view class="tab-item">
     <image src="{{static_base}}/icon-diagnose.png" mode="aspectFit" />
-    <text>问诊</text>
+    <text>食谱推荐</text>
   </view>
   <view class="tab-item">
     <image src="{{static_base}}/icon-me.png" mode="aspectFit" />
-    <text>我的</text>
+    <text>历史记录</text>
   </view>
 </view>
