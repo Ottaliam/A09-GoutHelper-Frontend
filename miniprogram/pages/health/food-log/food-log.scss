@@ -1,46 +1,121 @@
 /* pages/health/food-log/food-log.wxss */
 
-// 底部 Tab Bar 样式
-.tab-bar {
+@import 'miniprogram/pages/health/health.scss';
+
+.intake-component {
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: env(safe-area-inset-bottom);
-  background-color: #FAFBFC;
-  border-top: 1px solid #D8D8D8;
-  
-  .tab-item {
+  align-items: center;
+
+  .image-container {
+    width: 60px; 
+    height: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .nutrition-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nutrition-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    flex-grow: 1;
-
-    image {
-      width: 24px;
-      height: 24px;
-      margin-bottom: 3px;
+    
+    .nutrition-title {
+      font-size: 18px; 
+      font-weight: bold;
+      margin-bottom: 6px;
     }
 
-    text {
-      font-size: 12px;
+    .nutrition-values {
+      display: flex;
+      align-items: flex-end;
+
+      .nutrition-value {
+        font-size: 24px; 
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+
+      .nutrition-divider {
+        color: #bbb;
+        font-size: 24px;
+        margin: 0 4px;
+      }
+
+      .nutrition-unit {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .image-container {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+
+    .item-image {
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .active {
-    color: #1AAD19;
+  .text-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    image {
-      width: 24px;
-      height: 24px;
-      margin-bottom: 3px;
+    .title-and-quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+
+      .item-title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .item-quantity {
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 16px;
+      }
     }
 
-    text {
-      font-weight: bold;
+    .item-info {
+      font-size: 14px;
+      color: #888888;
     }
+  }
+}
+
+.floating-button {
+  position: fixed;
+  right: 16px;
+  bottom: 120px;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+
+  .button-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 }
