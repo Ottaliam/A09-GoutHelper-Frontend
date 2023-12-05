@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/health/food-log/food-log",
     "pages/health/food-add/food-add",
-    "pages/health/food-recipe/food-recipe"
+    "pages/health/food-recipe/food-recipe",
+    "pages/health/food-history/food-history"
   ],
   "window": {
     "navigationBarTextStyle": "black",

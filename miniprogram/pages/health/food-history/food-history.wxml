@@ -1,0 +1,71 @@
+<!--pages/health/food-history/food-history.wxml-->
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>饮食记录</text>
+</view>
+
+<!-- 标签栏 -->
+<view class="tabs-container">
+  <view class="tab active" data-tab="tab1" bindtap="onTabChange">周视图</view>
+  <view class="tab" data-tab="tab2" bindtap="onTabChange">月视图</view>
+  <view class="tab" data-tab="tab3" bindtap="onTabChange">年视图</view>
+  <view class="indicator"></view>
+</view>
+
+<!-- 图片容器 -->
+<view class="image-container">
+  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+</view>
+
+<!-- 标题文本 -->
+<view class="text-container">
+  <text class="bold-text left-text">10/19</text>
+  <text class="bold-text right-text">92.3 mg</text>
+</view>
+
+<!-- 摄入详细 -->
+<view class="list-container">
+  <view class="list-item">
+    <view class="image-container">
+      <image src="{{static_base}}/icon-health.png" class="item-image"/>
+    </view>
+    <view class="text-container">
+      <view class="title-and-quantity">
+        <text class="item-title">默认标题</text>
+        <text class="item-quantity">1 份</text>
+      </view>
+      <text class="item-info">40 mg</text>
+    </view>
+  </view>
+
+  <view class="list-item">
+    <view class="image-container">
+      <image src="{{static_base}}/icon-health.png" class="item-image"/>
+    </view>
+    <view class="text-container">
+      <view class="title-and-quantity">
+        <text class="item-title">默认标题</text>
+        <text class="item-quantity">1 份</text>
+      </view>
+      <text class="item-info">40 mg</text>
+    </view>
+  </view>
+  <!-- 动态添加更多列表项 -->
+</view>
+
+<!-- 底部 Tab Bar -->
+<view class="tab-bar">
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
+    <text>今日记录</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
+    <text>食谱推荐</text>
+  </view>
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
+    <text>历史记录</text>
+  </view>
+</view>
