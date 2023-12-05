@@ -1,0 +1,61 @@
+<!--pages/health/food-recipe/food-recipe.wxml-->
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>饮食记录</text>
+</view>
+
+<!-- 顶部搜索栏 -->
+<view class="search-bar">
+  <input type="text" placeholder="搜索" />
+</view>
+
+<!-- 图片容器 -->
+<view class="image-container">
+  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+</view>
+
+<!-- 推荐食谱 -->
+<view class="list-container">
+  <view class="list-item">
+    <view class="image-container">
+      <image src="{{static_base}}/icon-health.png" class="food-image"/>
+    </view>
+    <view class="text-container">
+      <text class="item-title">默认标题</text>
+      <text class="item-description">信息描述，稍微详细</text>
+    </view>
+    <view class="button-container">
+      <button>详情</button>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="image-container">
+      <image src="{{static_base}}/icon-health.png" class="food-image"/>
+    </view>
+    <view class="text-container">
+      <text class="item-title">默认标题</text>
+      <text class="item-description">信息描述，稍微详细</text>
+    </view>
+    <view class="button-container">
+      <button>详情</button>
+    </view>
+  </view>
+  <!-- 动态添加更多列表项 -->
+</view>
+
+<!-- 底部 Tab Bar -->
+<view class="tab-bar">
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
+    <text>今日记录</text>
+  </view>
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
+    <text>食谱推荐</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
+    <text>历史记录</text>
+  </view>
+</view>

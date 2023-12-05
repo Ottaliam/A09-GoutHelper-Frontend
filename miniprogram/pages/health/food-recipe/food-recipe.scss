@@ -1,0 +1,59 @@
+/* pages/health/food-recipe/food-recipe.wxss */
+
+@import 'miniprogram/pages/health/health.scss';
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+
+    .image-container {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+
+      .food-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .text-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .item-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 2px;
+      }
+
+      .item-description {
+        font-size: 14px;
+        color: #888888;
+      }
+    }
+
+    .button-container {
+      button {
+        padding: 5px 15px;
+        background-color: #f1f1f1;
+        border: 1px solid #dcdcdc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+        width: auto;
+        min-width: 50px;
+        margin-left: 10px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
