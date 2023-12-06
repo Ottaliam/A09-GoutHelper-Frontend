@@ -1,2 +1,52 @@
 <!--pages/health/flareup-add/flareup-add.wxml-->
-<text>pages/health/flareup-add/flareup-add.wxml</text>
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>饮食记录添加</text>
+</view>
+
+<!-- 日期输入 -->
+<view class="input-component">
+  <text class="title">日期</text>
+  <input type="date" class="input"/>
+</view>
+
+<!-- 症状输入 -->
+<view class="input-component">
+  <text class="title">症状</text>
+  <input type="text" class="input"/>
+</view>
+
+<!-- 严重程度输入 -->
+<view class="input-component">
+  <text class="title">严重程度</text>
+  <input type="text" class="input"/>
+</view>
+
+<!-- 触发因素输入 -->
+<view class="input-component">
+  <text class="title">可能触发因素</text>
+  <input type="text" class="input"/>
+</view>
+
+<!-- 按钮 -->
+<view class="button-container">
+  <button class="half-button">继续添加</button>
+  <button class="half-button">确定</button>
+</view>
+
+<!-- 底部 Tab Bar -->
+<view class="tab-bar">
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
+    <text>嘌呤摄入</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
+    <text>尿酸测量</text>
+  </view>
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
+    <text>发作情况</text>
+  </view>
+</view>

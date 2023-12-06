@@ -1,1 +1,53 @@
 /* pages/health/flareup-add/flareup-add.wxss */
+
+@import 'miniprogram/pages/health/health.scss';
+
+.input-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    align-self: flex-start;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  position: flex;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: 50px;
+
+  .half-button {
+    width: calc(50% - 20px);
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+}

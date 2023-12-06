@@ -1,2 +1,40 @@
 <!--pages/health/uricacid-add/uricacid-add.wxml-->
-<text>pages/health/uricacid-add/uricacid-add.wxml</text>
+
+<!-- 标题栏 -->
+<view class="header-bar">
+  <text>尿酸水平添加</text>
+</view>
+
+<!-- 日期输入 -->
+<view class="date-component">
+  <text class="date-title">日期</text>
+  <input type="date" class="date-input"/>
+</view>
+
+<!-- 尿酸水平输入 -->
+<view class="uricacid-component">
+  <text class="uricacid-title">尿酸水平</text>
+  <input type="digit" class="uricacid-input"/>
+</view>
+
+<!-- 按钮 -->
+<view class="button-container">
+  <button class="half-button">继续添加</button>
+  <button class="half-button">确定</button>
+</view>
+
+<!-- 底部 Tab Bar -->
+<view class="tab-bar">
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
+    <text>嘌呤摄入</text>
+  </view>
+  <view class="tab-item active">
+    <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
+    <text>尿酸测量</text>
+  </view>
+  <view class="tab-item">
+    <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
+    <text>发作情况</text>
+  </view>
+</view>
