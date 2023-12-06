@@ -4,12 +4,14 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/health/food-log/food-log",
-    "pages/health/food-add/food-add",
     "pages/health/food-recipe/food-recipe",
     "pages/health/food-history/food-history",
     "pages/health/logs-food/logs-food",
     "pages/health/logs-uricacid/logs-uricacid",
-    "pages/health/logs-flareup/logs-flareup"
+    "pages/health/logs-flareup/logs-flareup",
+    "pages/health/add/food-add/food-add",
+    "pages/health/add/uricacid-add/uricacid-add",
+    "pages/health/add/flareup-add/flareup-add"
   ],
   "window": {
     "navigationBarTextStyle": "black",
