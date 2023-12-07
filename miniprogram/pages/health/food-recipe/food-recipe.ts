@@ -64,5 +64,20 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onTabTap(event: WechatMiniprogram.TouchEvent) {
+    const tab = event.currentTarget.dataset.tab;
+
+    switch (tab) {
+      case 'logs':
+        wx.redirectTo({ url: '/pages/health/food-log/food-log' });
+        break;
+      case 'recipe':
+        break;
+      case 'history':
+        wx.redirectTo({ url: '/pages/health/food-history/food-history' });
+        break;
+    }
   }
 })

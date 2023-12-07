@@ -7,10 +7,8 @@
 
 <!-- 标签栏 -->
 <view class="tabs-container">
-  <view class="tab active" data-tab="tab1" bindtap="onTabChange">周视图</view>
-  <view class="tab" data-tab="tab2" bindtap="onTabChange">月视图</view>
-  <view class="tab" data-tab="tab3" bindtap="onTabChange">年视图</view>
-  <view class="indicator"></view>
+  <view class="tab" wx:for="{{['week', 'month', 'year']}}" data-tab="{{item}}" bindtap="onTabChange" wx:class="{{item === activeTab ? 'active' : ''}}">{{item === 'week' ? '周视图' : item === 'month' ? '月视图' : '年视图'}}</view>
+  <view class="indicator" style="left: {{indicatorLeft}};"></view>
 </view>
 
 <!-- 图片容器 -->
@@ -50,21 +48,21 @@
 </view>
 
 <!-- 浮动按钮 -->
-<view class="floating-button">
+<view class="floating-button" bind:tap="onTapToUricacidAdd">
   <image src="{{static_base}}/icon-add.png" class="button-image"/>
 </view>
 
 <!-- 底部 Tab Bar -->
 <view class="tab-bar">
-  <view class="tab-item">
+  <view class="tab-item" data-tab="food" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
     <text>嘌呤摄入</text>
   </view>
-  <view class="tab-item active">
+  <view class="tab-item active" data-tab="uricacid" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
     <text>尿酸测量</text>
   </view>
-  <view class="tab-item">
+  <view class="tab-item" data-tab="flareup" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
     <text>发作情况</text>
   </view>

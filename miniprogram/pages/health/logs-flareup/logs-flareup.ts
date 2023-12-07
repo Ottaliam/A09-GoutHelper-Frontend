@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    static_base: ""
+    static_base: "",
+    activeTab: "week",
+    indicatorLeft: '0%'
   },
 
   /**
@@ -64,5 +66,46 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onTabChange(event: WechatMiniprogram.TouchEvent) {
+    const tab = event.currentTarget.dataset.tab;
+    this.setData({
+      activeTab: tab,
+      indicatorLeft: this.calculateIndicatorPosition(tab)
+    });
+  },
+
+  calculateIndicatorPosition(tab: string): string {
+    switch (tab) {
+      case 'week':
+        return '0%';
+      case 'month':
+        return '33.333%';
+      case 'year':
+        return '66.667%';
+    }
+    return '0%';
+  },
+
+  onTabTap(event: WechatMiniprogram.TouchEvent) {
+    const tab = event.currentTarget.dataset.tab;
+
+    switch (tab) {
+      case 'food':
+        wx.redirectTo({ url: '/pages/health/logs-food/logs-food' });
+        break;
+      case 'uricacid':
+        wx.redirectTo({ url: '/pages/health/logs-uricacid/logs-uricacid' });
+        break;
+      case 'flareup':
+        break;
+    }
+  },
+
+  onTapToFlareupAdd() {
+    wx.navigateTo({
+      url: '/pages/health/add/flareup-add/flareup-add'
+    });
   }
 })

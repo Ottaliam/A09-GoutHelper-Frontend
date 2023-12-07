@@ -1,8 +1,6 @@
 {
   "pages": [
     "pages/health/health",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/health/food-log/food-log",
     "pages/health/food-recipe/food-recipe",
     "pages/health/food-history/food-history",

@@ -46,15 +46,15 @@
 
 <!-- 底部 Tab Bar -->
 <view class="tab-bar">
-  <view class="tab-item">
+  <view class="tab-item" data-tab="logs" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-food.png" mode="aspectFit" />
     <text>今日记录</text>
   </view>
-  <view class="tab-item active">
+  <view class="tab-item active" data-tab="recipe" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-logs.png" mode="aspectFit" />
     <text>食谱推荐</text>
   </view>
-  <view class="tab-item">
+  <view class="tab-item" data-tab="history" bind:tap="onTabTap">
     <image src="{{static_base}}/icon-calendar.png" mode="aspectFit" />
     <text>历史记录</text>
   </view>

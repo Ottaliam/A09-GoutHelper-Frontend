@@ -64,5 +64,27 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onTapToFood() {
+    wx.navigateTo({
+      url: '/pages/health/food-log/food-log'
+    });
+  },
+
+  onTapToFoodAdd() {
+    wx.navigateTo({
+      url: '/pages/health/add/food-add/food-add'
+    });
+  },
+
+  onTapToLogs() {
+    wx.navigateTo({
+      url: '/pages/health/logs-food/logs-food'
+    });
+  },
+
+  onTabTap(event: WechatMiniprogram.TouchEvent) {
+    // TODO: 实现对应页面后，完成跳转逻辑
   }
 })
