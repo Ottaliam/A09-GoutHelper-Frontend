@@ -106,13 +106,18 @@
     margin-bottom: 10px;
   }
 
-  .date-input {
+  .date-picker {
     width: 80%;
     border: 1px solid #ccc;
     border-radius: 20px;
     padding: 10px;
     font-size: 16px;
     box-sizing: border-box;
+    background-color: white;
+
+    .date-display {
+      text-align: center;
+    }
   }
 }
 

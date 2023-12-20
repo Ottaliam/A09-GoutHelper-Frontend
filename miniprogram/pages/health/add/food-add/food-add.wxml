@@ -7,17 +7,22 @@
 
 <!-- 顶部搜索栏 -->
 <view class="search-bar">
-  <input type="text" placeholder="搜索" />
+  <input type="text" placeholder="搜索" bindinput="onSearchInput" />
+  <view class="search-results" wx:if="{{isSearching && searchResults.length > 0}}">
+  <view class="result-item" wx:for="{{searchResults}}" wx:key="unique" bindtap="onResultTap" data-name="{{item}}">
+    {{item}}
+  </view>
+</view>
 </view>
 
 <!-- 食物信息输入 -->
 <view class="food-info">
-  <image src="{{static_base}}/icon-health.png" class="component-image"></image>
+  <image src="{{foodInfo.imageUrl}}" class="component-image"></image>
   <view class="text-and-input-container">
-    <text class="bold-rounded-text">这是一行加粗文字</text>
+    <text class="bold-rounded-text">{{foodInfo.name}}</text>
     <view class="input-and-text">
-      <input type="text" placeholder="数量" class="short-input"/>
-      <text class="right-aligned-text">短文本</text>
+      <input type="digit" placeholder="0" class="short-input" bindinput="onQuantityInput"/>
+      <text class="right-aligned-text">x {{foodInfo.msUnit}}</text>
     </view>
   </view>
 </view>
@@ -26,29 +31,33 @@
 <view class="purine-info">
   <text class="section-title">嘌呤含量</text>
   <view class="calculation-container">
-    <text class="bold-text">1</text>
+    <text class="bold-text">{{purineInfo.inputQuantity}}</text>
     <text>×</text>
-    <text class="normal-text">bbb</text>
+    <text class="normal-text">{{purineInfo.perUnit}} mg / {{foodInfo.msUnit}}</text>
     <text>=</text>
-    <text class="bold-text">c</text>
+    <text class="bold-text">{{purineInfo.totalPurine}}</text>
     <text>mg</text>
   </view>
 </view>
 
+
 <!-- 日期输入 -->
 <view class="date-component">
   <text class="date-title">日期</text>
-  <input type="date" class="date-input"/>
+  <picker mode="date" value="{{date}}" start="2000-01-01" end="2029-12-31" bindchange="bindDateChange" class="date-picker">
+    <view class="date-display">{{date}}</view>
+  </picker>
 </view>
+
 
 <!-- 健康提醒 -->
 <view class="health-tips">
-  <text class="info-title">健康提示标题</text>
-  <text class="info-text">请注意正确认识的心态对健康检查的重要性。你今天对健康的微笑，加油！</text>
+  <text class="info-title">健康提示</text>
+  <text class="info-text">{{healthTips.tip}}</text>
 </view>
 
 <!-- 按钮 -->
 <view class="button-container">
-  <button class="half-button">继续添加</button>
-  <button class="half-button">确定</button>
+  <button class="half-button" bindtap="addFoodRecord">继续添加</button>
+  <button class="half-button" bindtap="addFoodRecordAndBack">确定</button>
 </view>
