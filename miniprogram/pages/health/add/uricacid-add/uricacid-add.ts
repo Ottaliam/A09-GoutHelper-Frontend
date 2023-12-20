@@ -1,11 +1,73 @@
 // pages/health/uricacid-add/uricacid-add.ts
+
+import { getTodayDate } from '../../../../utils/util';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    static_base: ""
+    static_base: "",
+    date: getTodayDate(),
+    uricacidLevel: '',
+  },
+
+  bindDateChange(e: WechatMiniprogram.CustomEvent) {
+    this.setData({
+      date: e.detail.value
+    });
+  },
+
+  onUricacidInput(e: WechatMiniprogram.Input) {
+    this.setData({
+      uricacidLevel: e.detail.value
+    });
+  },
+
+  addUricacidRecord() {
+    const that = this;
+    const openid = getApp().globalData.openid;
+    const date = this.data.date;
+    const uricacidLevel = Number(this.data.uricacidLevel);
+
+    if (!uricacidLevel || isNaN(uricacidLevel) || uricacidLevel < 0) {
+      wx.showToast({
+        title: '请输入有效的尿酸水平',
+        icon: 'none'
+      });
+      return;
+    }
+
+    wx.request({
+      url: getApp().globalData.server_address + '/record/addUricacidRecord',
+      method: 'POST',
+      data: {
+        openid: openid,
+        quantity: uricacidLevel,
+        record_date: date
+      },
+      success: function(res) {
+        const data = res.data as Record<string, any>;
+
+        if (data.status === 'success') {
+          console.log('添加记录成功, 记录ID:', data.record_id);
+          that.setData({
+            date: getTodayDate(),
+            uricacidLevel: '',
+          });
+        } else {
+        }
+      },
+      fail: function(err) {
+        // 请求失败的处理逻辑...
+      }
+    });
+  },
+
+  addUricacidRecordAndBack() {
+    this.addUricacidRecord();
+    wx.navigateBack();
   },
 
   /**

@@ -8,17 +8,19 @@
 <!-- 日期输入 -->
 <view class="date-component">
   <text class="date-title">日期</text>
-  <input type="date" class="date-input"/>
+  <picker mode="date" value="{{date}}" start="2000-01-01" end="2029-12-31" bindchange="bindDateChange" class="date-picker">
+    <view class="date-display">{{date}}</view>
+  </picker>
 </view>
 
 <!-- 尿酸水平输入 -->
 <view class="uricacid-component">
   <text class="uricacid-title">尿酸水平</text>
-  <input type="digit" class="uricacid-input"/>
+  <input type="digit" class="uricacid-input" value="{{uricacidLevel}}" bindinput="onUricacidInput"/>
 </view>
 
 <!-- 按钮 -->
 <view class="button-container">
-  <button class="half-button">继续添加</button>
-  <button class="half-button">确定</button>
+  <button class="half-button" bindtap="addUricacidRecord">继续添加</button>
+  <button class="half-button" bindtap="addUricacidRecordAndBack">确定</button>
 </view>

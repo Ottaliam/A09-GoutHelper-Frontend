@@ -6,31 +6,33 @@
 </view>
 
 <!-- 日期输入 -->
-<view class="input-component">
-  <text class="title">日期</text>
-  <input type="date" class="input"/>
+<view class="date-component">
+  <text class="date-title">日期</text>
+  <picker mode="date" value="{{date}}" start="2000-01-01" end="2029-12-31" bindchange="bindDateChange" class="date-picker">
+    <view class="date-display">{{date}}</view>
+  </picker>
 </view>
 
 <!-- 症状输入 -->
 <view class="input-component">
   <text class="title">症状</text>
-  <input type="text" class="input"/>
+  <input type="text" class="input" bindinput="onSymptomInput" value="{{symptom}}"/>
 </view>
 
 <!-- 严重程度输入 -->
 <view class="input-component">
   <text class="title">严重程度</text>
-  <input type="text" class="input"/>
+  <input type="text" class="input" bindinput="onIntenseLevelInput" value="{{intenseLevel}}"/>
 </view>
 
 <!-- 触发因素输入 -->
 <view class="input-component">
   <text class="title">可能触发因素</text>
-  <input type="text" class="input"/>
+  <input type="text" class="input" bindinput="onTriggerInput" value="{{trigger}}"/>
 </view>
 
 <!-- 按钮 -->
 <view class="button-container">
-  <button class="half-button">继续添加</button>
-  <button class="half-button">确定</button>
+  <button class="half-button" bindtap="addFlareupRecord">继续添加</button>
+  <button class="half-button" bindtap="addFlareupRecordAndBack">确定</button>
 </view>

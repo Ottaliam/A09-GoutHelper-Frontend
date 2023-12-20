@@ -1,16 +1,6 @@
-// pages/health/food-add/food-add.ts
-function getTodayDate(): string {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1; // getMonth() 返回 0-11
-  const day = today.getDate();
+// pages/health/add/food-add/food-add.ts
 
-  // 将月份和日期格式化为两位数
-  const monthFormatted = month < 10 ? `0${month}` : month;
-  const dayFormatted = day < 10 ? `0${day}` : day;
-
-  return `${year}-${monthFormatted}-${dayFormatted}`;
-}
+import { getTodayDate } from '../../../../utils/util';
 
 Page({
   /**
@@ -37,7 +27,7 @@ Page({
     quantity: "0"
   },
 
-  bindDataChange(e: WechatMiniprogram.CustomEvent) {
+  bindDateChange(e: WechatMiniprogram.CustomEvent) {
     this.setData({
       date: e.detail.value
     });

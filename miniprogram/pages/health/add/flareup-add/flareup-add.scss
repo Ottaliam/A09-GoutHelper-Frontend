@@ -24,6 +24,38 @@
     padding: 10px;
     font-size: 16px;
     box-sizing: border-box;
+    height: 40px;
+    line-height: 20px;
+  }
+}
+
+.date-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+
+  .date-title {
+    font-size: 18px;
+    font-weight: bold;
+    align-self: flex-start;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .date-picker {
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: white;
+
+    .date-display {
+      text-align: center;
+    }
   }
 }
 
