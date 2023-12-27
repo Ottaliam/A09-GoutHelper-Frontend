@@ -1,13 +1,43 @@
 // pages/health/logs-food/logs-food.ts
-Page({
 
+import { getTodayDate } from '../../../utils/util';
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
     static_base: "",
     activeTab: "week",
-    indicatorLeft: '0%'
+    indicatorLeft: '0%',
+  },
+
+  fetchCharts() {
+    const that = this;
+
+    wx.request({
+      url: getApp().globalData.server_address + '/record/chartFoodRecord',
+      method: 'POST',
+      data: {
+        date: getTodayDate()
+      },
+      success: function(res) {
+        const data = res.data as Record<string, any>;
+
+        if (data.status === 'success' && data.charts) {
+          that.setData({
+            last7DaysChartUrl: data.charts.last_7_days_chart,
+            lastMonthChartUrl: data.charts.last_month_chart,
+            lastYearChartUrl: data.charts.last_year_chart
+          });
+        } else {
+          console.error('获取图表失败:', data.message);
+        }
+      },
+      fail: function(err) {
+        console.error('请求失败', err);
+      }
+    });
   },
 
   /**
@@ -16,7 +46,8 @@ Page({
   onLoad() {
     this.setData({
       static_base: getApp().globalData.static_base
-    })
+    });
+    this.fetchCharts();
   },
 
   /**

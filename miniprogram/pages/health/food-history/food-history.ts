@@ -1,22 +1,54 @@
 // pages/health/food-history/food-history.ts
+
+import { getTodayDate } from '../../../utils/util';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    static_base: "",
+    server_address: getApp().globalData.server_address,
+    static_base: getApp().globalData.static_base,
     activeTab: "week",
-    indicatorLeft: '0%'
+    indicatorLeft: '0%',
+    date: getTodayDate(),
+    foodRecords: [],
+  },
+
+  fetchFoodRecordsForDate(dateStr: string) {
+    const that = this;
+    const openid = getApp().globalData.openid;
+
+    wx.request({
+      url: getApp().globalData.server_address + '/record/recordForDate',
+      method: 'POST',
+      data: {
+        openid: openid,
+        date: dateStr
+      },
+      success: function(res) {
+        const data = res.data as Record<string, any>;
+
+        if (data.status === 'success') {
+          that.setData({
+            foodRecords: data.records
+          });
+        } else {
+          console.error('获取食物记录失败:', data.message);
+        }
+      },
+      fail: function(err) {
+        console.error('请求失败', err);
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.setData({
-      static_base: getApp().globalData.static_base
-    })
+    this.fetchFoodRecordsForDate(getTodayDate());
   },
 
   /**

@@ -7,9 +7,6 @@
 
 <!-- 当日摄入信息 -->
 <view class="intake-component">
-  <view class="image-container">
-    <image src="{{static_base}}/icon-health.png" class="nutrition-image"/>
-  </view>
   <view class="nutrition-text">
     <text class="nutrition-title">今日嘌呤摄入</text>
     <view class="nutrition-values">
@@ -22,32 +19,20 @@
 
 <!-- 摄入详细 -->
 <view class="list-container">
-  <view class="list-item">
-    <view class="image-container">
-      <image src="{{static_base}}/icon-health.png" class="item-image"/>
-    </view>
-    <view class="text-container">
-      <view class="title-and-quantity">
-        <text class="item-title">默认标题</text>
-        <text class="item-quantity">1 份</text>
+  <block wx:for="{{foodRecords}}" wx:key="*this">
+    <view class="list-item">
+      <view class="image-container">
+        <image src="{{server_address}}{{item.image_url}}" class="item-image"/>
       </view>
-      <text class="item-info">40 mg</text>
-    </view>
-  </view>
-
-  <view class="list-item">
-    <view class="image-container">
-      <image src="{{static_base}}/icon-health.png" class="item-image"/>
-    </view>
-    <view class="text-container">
-      <view class="title-and-quantity">
-        <text class="item-title">默认标题</text>
-        <text class="item-quantity">1 份</text>
+      <view class="text-container">
+        <view class="title-and-quantity">
+          <text class="item-title">{{item.food_name}}</text>
+          <text class="item-quantity">{{item.quantity}} x {{item.ms_unit}}</text>
+        </view>
+        <text class="item-info">{{item.purine_content}} mg</text>
       </view>
-      <text class="item-info">40 mg</text>
     </view>
-  </view>
-  <!-- 动态添加更多列表项 -->
+  </block>
 </view>
 
 <!-- 浮动按钮 -->

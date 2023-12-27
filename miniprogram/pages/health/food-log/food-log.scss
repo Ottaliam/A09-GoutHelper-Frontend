@@ -5,23 +5,13 @@
 .intake-component {
   display: flex;
   align-items: center;
-
-  .image-container {
-    width: 60px; 
-    height: 60px;
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  .nutrition-image {
-    width: 100%;
-    height: 100%;
-  }
+  justify-content: center;
 
   .nutrition-text {
     display: flex;
     flex-direction: column;
-    
+    align-items: center; // 添加此行以居中子元素
+
     .nutrition-title {
       font-size: 18px; 
       font-weight: bold;
@@ -51,6 +41,7 @@
     }
   }
 }
+
 
 .list-container {
   display: flex;
