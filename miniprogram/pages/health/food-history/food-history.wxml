@@ -12,8 +12,8 @@
 </view>
 
 <!-- 图片容器 -->
-<view class="image-container">
-  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+<view class="chart-container">
+  <canvas canvas-id="lineCanvas" style="width: 100%; height: 300px;"></canvas>
 </view>
 
 <!-- 标题文本 -->
