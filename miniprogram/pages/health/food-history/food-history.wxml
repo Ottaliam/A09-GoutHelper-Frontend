@@ -16,12 +16,6 @@
   <canvas canvas-id="lineCanvas" style="width: 100%; height: 300px;"></canvas>
 </view>
 
-<!-- 标题文本 -->
-<view class="text-container">
-  <text class="bold-text left-text">10/19</text>
-  <text class="bold-text right-text">92.3 mg</text>
-</view>
-
 <!-- 摄入详细 -->
 <view class="list-container">
   <block wx:for="{{foodRecords}}" wx:key="*this">

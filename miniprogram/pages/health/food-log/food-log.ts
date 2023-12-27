@@ -12,7 +12,7 @@ Page({
     static_base: getApp().globalData.static_base,
     date: getTodayDate(),
     foodRecords: [],
-    imageUrl: "",
+    purineContentTotal: 0,
   },
 
   fetchFoodRecordsForDate(dateStr: string) {
@@ -31,7 +31,8 @@ Page({
 
         if (data.status === 'success') {
           that.setData({
-            foodRecords: data.records
+            foodRecords: data.records,
+            purineContentTotal: data.records.reduce((sum: number, item: { purine_content: string }) => { return sum + Number(item.purine_content); }, 0)
           });
         } else {
           console.error('获取食物记录失败:', data.message);

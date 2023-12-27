@@ -10,7 +10,7 @@
   <view class="nutrition-text">
     <text class="nutrition-title">今日嘌呤摄入</text>
     <view class="nutrition-values">
-      <text class="nutrition-value">92.3</text>
+      <text class="nutrition-value">{{purineContentTotal}}</text>
       <text class="nutrition-divider">/</text>
       <text class="nutrition-unit">150 mg</text>
     </view>

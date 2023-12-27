@@ -12,30 +12,33 @@
 </view>
 
 <!-- 图片容器 -->
-<view class="image-container">
-  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+<view class="chart-container">
+  <canvas canvas-id="lineCanvas" style="width: 100%; height: 300px;"></canvas>
 </view>
 
 <!-- 表格 -->
 <view class="table-container">
+  <!-- 表头 -->
   <view class="table-header">
     <text class="header-item"></text> <!-- 空的表头项用于占位 -->
-    <text class="header-item">发作次数</text>
+    <text class="header-item">总次数</text>
     <text class="header-item">平均强度</text>
   </view>
+  <!-- 内容 -->
   <view class="table-row">
-    <text class="header-item">该周数据</text>
-    <text class="table-item">3</text>
-    <text class="table-item">1.29</text>
+    <text class="header-item">近7日</text>
+    <text class="table-item">{{countFlare7}}</text>
+    <text class="table-item">{{avgFlare7}}</text>
   </view>
   <view class="table-row">
-    <text class="header-item">最近7天</text>
-    <view class="table-item">
-      <text>4</text><text class="arrow">↓</text>
-    </view>
-    <view class="table-item">
-      <text>1.51</text><text class="arrow">↓</text>
-    </view>
+    <text class="header-item">近30日</text>
+    <text class="table-item">{{countFlare30}}</text>
+    <text class="table-item">{{avgFlare30}}</text>
+  </view>
+  <view class="table-row">
+    <text class="header-item">近12月</text>
+    <text class="table-item">{{countFlare12}}</text>
+    <text class="table-item">{{avgFlare12}}</text>
   </view>
 </view>
 

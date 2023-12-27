@@ -12,8 +12,8 @@
 </view>
 
 <!-- 图片容器 -->
-<view class="image-container">
-  <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />
+<view class="chart-container">
+  <canvas canvas-id="lineCanvas" style="width: 100%; height: 300px;"></canvas>
 </view>
 
 <!-- 表格 -->
@@ -21,29 +21,20 @@
   <!-- 表头 -->
   <view class="table-header">
     <text class="header-item"></text> <!-- 空的表头项用于占位 -->
-    <text class="header-item">早餐</text>
-    <text class="header-item">午餐</text>
-    <text class="header-item">晚餐</text>
+    <text class="header-item">平均水平</text>
   </view>
-  <!-- 第二行 -->
+  <!-- 内容 -->
   <view class="table-row">
-    <text class="header-item">达标摄取</text>
-    <text class="table-item">350</text>
-    <text class="table-item">99</text>
-    <text class="table-item">200</text>
+    <text class="header-item">近7日</text>
+    <text class="table-item">{{avgUric7}}</text>
   </view>
-  <!-- 第三行 -->
   <view class="table-row">
-    <text class="header-item">最近7天</text>
-    <view class="table-item">
-      <text>150</text><text class="arrow">↓</text>
-    </view>
-    <view class="table-item">
-      <text>77</text><text class="arrow">↓</text>
-    </view>
-    <view class="table-item">
-      <text>114</text><text class="arrow">↓</text>
-    </view>
+    <text class="header-item">近30日</text>
+    <text class="table-item">{{avgUric30}}</text>
+  </view>
+  <view class="table-row">
+    <text class="header-item">近12月</text>
+    <text class="table-item">{{avgUric12}}</text>
   </view>
 </view>
 
