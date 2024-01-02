@@ -24,9 +24,9 @@ Page({
     activeTab: "week",
     indicatorLeft: '0%',
     RecordSummary: null,
-    avgUric7: 0,
-    avgUric30: 0,
-    avgUric12: 0,
+    avgUric7: "0",
+    avgUric30: "0",
+    avgUric12: "0",
   },
 
   fetchRecordSummary() {
@@ -51,21 +51,21 @@ Page({
                 that.drawLineChart(purines, periods);
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  avgUric7: total / 7
+                  avgUric7: (total / 7).toFixed(2)
                 });
               }
               if (that.data.RecordSummary) {
                 const { periods, purines } = that.extractDataForPlotting(that.data.RecordSummary, "last_month");
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  avgUric30: total / 30
+                  avgUric30: (total / 30).toFixed(2)
                 });
               }
               if (that.data.RecordSummary) {
                 const { periods, purines } = that.extractDataForPlotting(that.data.RecordSummary, "last_year");
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  avgUric12: total / 12
+                  avgUric12: (total / 12).toFixed(2)
                 });
               }
             } else {
@@ -114,7 +114,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.fetchRecordSummary();
+    
   },
 
   /**
@@ -128,7 +128,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.fetchRecordSummary();
   },
 
   /**

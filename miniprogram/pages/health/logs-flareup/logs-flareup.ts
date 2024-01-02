@@ -25,11 +25,11 @@ Page({
     indicatorLeft: '0%',
     RecordSummary: null,
     countFlare7: 0,
-    avgFlare7: 0,
+    avgFlare7: "0",
     countFlare30: 0,
-    avgFlare30: 0,
+    avgFlare30: "0",
     countFlare12: 0,
-    avgFlare12: 0,
+    avgFlare12: "0",
   },
 
   fetchRecordSummary() {
@@ -56,7 +56,7 @@ Page({
                 const count = purines.filter(item => item > 0).length;
                 that.setData({
                   countFlare7: count,
-                  avgFlare7: total / count
+                  avgFlare7: (total / count).toFixed(2)
                 });
               }
               if (that.data.RecordSummary) {
@@ -65,7 +65,7 @@ Page({
                 const count = purines.filter(item => item > 0).length;
                 that.setData({
                   countFlare30: count,
-                  avgFlare30: total / count
+                  avgFlare30: (total / count).toFixed(2)
                 });
               }
               if (that.data.RecordSummary) {
@@ -74,7 +74,7 @@ Page({
                 const count = purines.filter(item => item > 0).length;
                 that.setData({
                   countFlare12: count,
-                  avgFlare12: total / count
+                  avgFlare12: (total / count).toFixed(2)
                 });
               }
             } else {
@@ -123,7 +123,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.fetchRecordSummary();
+    
   },
 
   /**
@@ -137,7 +137,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.fetchRecordSummary();
   },
 
   /**

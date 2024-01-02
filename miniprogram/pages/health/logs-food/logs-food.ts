@@ -25,12 +25,12 @@ Page({
     date: getTodayDate(),
     foodRecords: [],
     foodRecordSummary: null,
-    totalPurine7: 0,
-    avgPurine7: 0,
-    totalPurine30: 0,
-    avgPurine30: 0,
-    totalPurine12: 0,
-    avgPurine12: 0
+    totalPurine7: "0",
+    avgPurine7: "0",
+    totalPurine30: "0",
+    avgPurine30: "0",
+    totalPurine12: "0",
+    avgPurine12: "0"
   },
 
   fetchFoodRecordSummary() {
@@ -55,24 +55,24 @@ Page({
                 that.drawLineChart(purines, periods);
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  totalPurine7: total,
-                  avgPurine7: total / 7
+                  totalPurine7: total.toFixed(2),
+                  avgPurine7: (total / 7).toFixed(2)
                 });
               }
               if (that.data.foodRecordSummary) {
                 const { periods, purines } = that.extractDataForPlotting(that.data.foodRecordSummary, "last_month");
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  totalPurine30: total,
-                  avgPurine30: total / 30
+                  totalPurine30: total.toFixed(2),
+                  avgPurine30: (total / 30).toFixed(2)
                 });
               }
               if (that.data.foodRecordSummary) {
                 const { periods, purines } = that.extractDataForPlotting(that.data.foodRecordSummary, "last_year");
                 const total = purines.reduce((sum, current) => sum + current, 0);
                 that.setData({
-                  totalPurine12: total,
-                  avgPurine12: total / 12
+                  totalPurine12: total.toFixed(2),
+                  avgPurine12: (total / 12).toFixed(2)
                 });
               }
             } else {
@@ -121,7 +121,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.fetchFoodRecordSummary();
+    
   },
 
   /**
@@ -135,7 +135,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.fetchFoodRecordSummary();
   },
 
   /**

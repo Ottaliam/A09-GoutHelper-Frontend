@@ -5,11 +5,6 @@
   <text>痛风助手</text>
 </view>
 
-<!-- 顶部搜索栏 -->
-<view class="search-bar">
-  <input type="text" placeholder="搜索" />
-</view>
-
 <!-- 图片容器 -->
 <view class="image-container">
   <image src="{{static_base}}/banner-health_home.jpg" mode="aspectFit" />

@@ -48,7 +48,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.fetchFoodRecordsForDate(getTodayDate());
+    
   },
 
   /**
@@ -62,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.fetchFoodRecordsForDate(getTodayDate());
   },
 
   /**
