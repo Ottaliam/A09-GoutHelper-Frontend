@@ -38,6 +38,7 @@ Page({
         method: 'POST',
         data: {
             reference_date: today,
+            openid: getApp().globalData.openid
         },
         success(res) {
           const data = res.data as Record<string, any>;
